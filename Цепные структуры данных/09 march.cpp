@@ -6,26 +6,33 @@ public:
 	pair <int, int>* data;
 	int I = 0;
 	int arraySize;
-	Array(int N) {
+	Array(int N) 
+	{
 		arraySize = N;
 		data = new pair <int, int>[N];
 	}
-	Array(Array& A) {
+	Array(Array& A) 
+	{
 		arraySize = A.arraySize;
 		data = A.data;
 	}
-	~Array() {
+	~Array()
+	{
 		delete[] data;
 	}
-	pair <int, int> &operator[](int i) {
-		while (i >= arraySize) {
+	pair <int, int> &operator[](int i) 
+	{
+		while (i >= arraySize) 
+		{
 			i -= arraySize;
 		}
 		return data[i];
 	}
-	void input() {
+	void input() 
+	{
 		int j, a, b;
-		for (int i = I; i < arraySize + I; i++) {
+		for (int i = I; i < arraySize + I; i++) 
+		{
 			j = i;
 			while (j >= arraySize)
 				j -= arraySize;
@@ -33,16 +40,19 @@ public:
 			data[j] = make_pair(a, b);
 		}
 	}
-	void output() {
+	void output() 
+	{
 		int j;
-		for (int i = I; i < arraySize + I; i++) {
+		for (int i = I; i < arraySize + I; i++)
+		{
 			j = i;
 			while (j >= arraySize)
 				j -= arraySize;
-			cout << data[j].first << " " << data[j].second << "\n";
+			cout << data[j].first << " " << data[j].second << endl;
 		}
 	}
-	void shift(int k) {
+	void shift(int k)
+	{
 		I += k;
 	}
 };
