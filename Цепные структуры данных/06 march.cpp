@@ -9,6 +9,7 @@ bool Brackets(char opening, char closing)
 	else if (opening == '{' && closing == '}') return true;
 	return false;
 }
+
 bool BalancedParentheses(string b)
 {
 	stack<char> A;
@@ -16,6 +17,7 @@ bool BalancedParentheses(string b)
 	{
 		if (b[i] == '(' || b[i] == '{' || b[i] == '[')
 			A.push(b[i]);
+		
 		else if (b[i] == ')' || b[i] == '}' || b[i] == ']')
 		{
 			if (A.empty() || !Brackets(A.top(), b[i]))
